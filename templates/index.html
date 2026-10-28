@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REEN | Economia de Energia</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark">🌎</div>
+        <span>REEN</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#resultado">Economia</a>
+        <a href="#dicas">Dicas</a>
+      </nav>
+
+      <button class="nav-button" type="button" id="btnSimular">Simular</button>
+    </div>
+  </header>
+
+  <div class="container page" id="inicio">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <div class="eyebrow">Economia de Energia</div>
+          <h1>Descubra o consumo da sua casa e <span class="gradient">economize mais</span>.</h1>
+          <p class="subtitle">
+            Veja quanto sua residência consome por dia, mês e ano com base nos aparelhos e na rotina da casa.
+          </p>
+        </div>
+
+        <div class="hero-right">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Casa sustentável">
+          <div class="hero-badge">
+            <div class="top">
+              <span>Consumo atual</span>
+              <span class="hero-status">ativo</span>
+            </div>
+            <div class="hero-number" id="hero-kwh">0,00</div>
+            <div class="hero-subs">kWh/dia</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-card" id="calculador">
+      <div class="form-header">
+        <h2>🌎 REEN | Economia de Energia</h2>
+        <span class="badge">Tarifa padrão: R$ 0,50 / kWh</span>
+      </div>
+
+      <div class="city-box">
+        <label for="cidade">Cidade</label>
+        <input id="cidade" type="text" value="São Paulo" />
+      </div>
+
+      <div id="appliance-list"></div>
+
+      <div class="action-row">
+        <button type="button" class="btn btn-primary" id="calcular">Calcular consumo e custos</button>
+        <button type="button" class="btn btn-secondary" id="limpar">Limpar</button>
+      </div>
+    </section>
+
+    <section class="how-it-works" id="como-funciona">
+      <h3>Como funciona</h3>
+      <div class="steps">
+        <div class="step">
+          <span>1</span>
+          <p>Você informa a cidade e os aparelhos da casa.</p>
+        </div>
+        <div class="step">
+          <span>2</span>
+          <p>O sistema calcula o consumo em kWh usando a potência e tempo de uso por dia.</p>
+        </div>
+        <div class="step">
+          <span>3</span>
+          <p>O resultado mostra custo diário, mensal e anual.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="resultado">
+      <h3>Resultado</h3>
+
+      <div class="result-grid">
+        <div class="result-box">
+          <span class="label">Seu consumo diário é</span>
+          <div class="value" id="consumoDiario">0,00 kWh</div>
+        </div>
+
+        <div class="result-box">
+          <span class="label">Seu custo diário é</span>
+          <div class="value" id="custoDiario">R$ 0,00</div>
+        </div>
+
+        <div class="result-box">
+          <span class="label">Seu consumo por hora é</span>
+          <div class="value" id="consumoHora">0,00 kWh</div>
+        </div>
+
+        <div class="result-box">
+          <span class="label">Seu custo por hora é</span>
+          <div class="value" id="custoHora">R$ 0,00</div>
+        </div>
+
+        <div class="result-box">
+          <span class="label">Seu consumo mensal é</span>
+          <div class="value" id="consumoMensal">0,00 kWh</div>
+        </div>
+
+        <div class="result-box">
+          <span class="label">Seu custo mensal é</span>
+          <div class="value" id="custoMensal">R$ 0,00</div>
+        </div>
+
+        <div class="result-box">
+          <span class="label">Seu consumo anual é</span>
+          <div class="value" id="consumoAnual">0,00 kWh</div>
+        </div>
+
+        <div class="result-box">
+          <span class="label">Seu custo anual é</span>
+          <div class="value" id="custoAnual">R$ 0,00</div>
+        </div>
+      </div>
+
+      <div class="dicas" id="dicas">
+        <h4>Dicas inteligentes para reduzir gastos</h4>
+        <ul class="dica-list" id="dica-list">
+          <li>Preencha os dados e veja as sugestões mais relevantes para sua casa.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    © 2026 REEN — Projeto desenvolvido com foco em estudo de Python e energia doméstica. Fico feliz se te ajudei em algo!🌎
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
